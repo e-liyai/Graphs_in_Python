@@ -20,3 +20,5 @@ class AdjacencyMatrixGraph(Graph):
 
         if weight < 1:
             raise ValueError('An edge cannot have weight < 1')
+
+        self.matrix[v1][v2] = weight
