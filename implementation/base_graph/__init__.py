@@ -6,7 +6,6 @@
 ########################################################
 
 import abc
-import numpy as np
 
 
 class Graph(abc.ABC):
