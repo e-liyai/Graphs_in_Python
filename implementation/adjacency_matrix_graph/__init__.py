@@ -46,6 +46,9 @@ class AdjacencyMatrixGraph(Graph):
 
         return in_degree
 
+    def get_edge_weight(self, v1, v2):
+        return self.matrix[v1][v2]
+
     def check_valid_vartices(v):
         if v < 0 or v >= self.numVertices:
             raise ValueError('Cannot access vertices %d' % v)
