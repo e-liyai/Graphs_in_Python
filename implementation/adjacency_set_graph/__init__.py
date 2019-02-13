@@ -41,6 +41,14 @@ class AdjacencySetGraph(Graph):
 
         return indegree
 
+    def display(self):
+        for i in range(self.numVertices):
+            for v in self.get_adjacent_vertices(i):
+                print(i, ' -----> ', v)
+
+    def get_edge_weight(self, v1, v2):
+        return 1
+
     def check_valid_vertex(self, v):
         if v < 0 or v >= self.numVertices:
             raise ValueError('Cannot access vertex %d' % v)
