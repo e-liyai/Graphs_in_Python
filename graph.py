@@ -1,6 +1,6 @@
 from implementation.adjacency_matrix_graph import AdjacencyMatrixGraph
 
-graph = AdjacencyMatrixGraph(4)
+graph = AdjacencyMatrixGraph(4, directed=True)
 
 graph.add_edge(0, 1)
 graph.add_edge(0, 2)

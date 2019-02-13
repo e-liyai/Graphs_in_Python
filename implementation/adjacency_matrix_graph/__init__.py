@@ -24,7 +24,7 @@ class AdjacencyMatrixGraph(Graph):
         self.matrix[v1][v2] = weight
 
         if self.directed == False:
-            self.matrix[v1][v2] = weight
+            self.matrix[v2][v1] = weight
 
     def get_adjacent_vertices(self, v):
         self.check_valid_vartices(v)
@@ -41,7 +41,7 @@ class AdjacencyMatrixGraph(Graph):
 
         in_degree = 0
         for i in range(self.numVertices):
-            if self.matrix[v][i] > 0:
+            if self.matrix[i][v] > 0:
                 in_degree += 1
 
         return in_degree
