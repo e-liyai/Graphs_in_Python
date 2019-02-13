@@ -27,8 +27,7 @@ class AdjacencyMatrixGraph(Graph):
             self.matrix[v1][v2] = weight
 
     def get_adjacent_vertices(self, v):
-        if v < 0 or v >= self.numVertices:
-            raise ValueError('Cannot access vertices %d' % v)
+        self.check_valid_vartices(v)
 
         adjacent_vertices = []
         for i in range(self.numVertices):
@@ -36,3 +35,17 @@ class AdjacencyMatrixGraph(Graph):
                 adjacent_vertices.append(i)
 
         return adjacent_vertices
+
+    def get_indegree(self, v):
+        self.check_valid_vartices(v)
+
+        in_degree = 0
+        for i in range(self.numVertices):
+            if self.matrix[v][i] > 0:
+                in_degree += 1
+
+        return in_degree
+
+    def check_valid_vartices(v):
+        if v < 0 or v >= self.numVertices:
+            raise ValueError('Cannot access vertices %d' % v)
