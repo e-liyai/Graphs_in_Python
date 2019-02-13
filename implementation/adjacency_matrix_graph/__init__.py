@@ -22,3 +22,17 @@ class AdjacencyMatrixGraph(Graph):
             raise ValueError('An edge cannot have weight < 1')
 
         self.matrix[v1][v2] = weight
+
+        if self.directed == False:
+            self.matrix[v1][v2] = weight
+
+    def get_adjacent_vertices(self, v):
+        if v < 0 or v >= self.numVertices:
+            raise ValueError('Cannot access vertices %d' % v)
+
+        adjacent_vertices = []
+        for i in range(self.numVertices):
+            if self.matrix[v][i] > 0:
+                adjacent_vertices.append(i)
+
+        return adjacent_vertices
