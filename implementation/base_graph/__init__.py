@@ -14,22 +14,22 @@ class Graph(abc.ABC):
         self.numVertices = numVertices
         self.directed = directed
 
-    @abc.abstractMethod
+    @abc.abstractmethod
     def add_edge(self, v1, v2, weight):
         pass
 
-    @abc.abstractMethod
+    @abc.abstractmethod
     def get_adjacent_vertices(self, v):
         pass
 
-    @abc.abstractMethod
+    @abc.abstractmethod
     def get_indegree(self, v):
         pass
 
-    @abc.abstractMethod
+    @abc.abstractmethod
     def get_edge_weight(self, v1, v2):
         pass
 
-    @abc.abstractMethod
+    @abc.abstractmethod
     def display(self):
         pass

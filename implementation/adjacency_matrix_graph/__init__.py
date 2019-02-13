@@ -54,6 +54,6 @@ class AdjacencyMatrixGraph(Graph):
             for v in self.get_adjacent_vertices(i):
                 print(i, ' -----> ', v)
 
-    def check_valid_vartices(v):
+    def check_valid_vartices(self, v):
         if v < 0 or v >= self.numVertices:
             raise ValueError('Cannot access vertices %d' % v)
