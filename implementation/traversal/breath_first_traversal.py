@@ -8,9 +8,9 @@ from implementation.adjacency_matrix_graph import AdjacencyMatrixGraph
 def breath_first_search(graph, start=0):
 
     queue = Queue()
-    queue.start(start)
+    queue.put(start)
 
-    visited = np.zero(graph.numVertices)
+    visited = np.zeros(graph.numVertices)
 
     while not queue.empty():
         vertex = queue.get()
