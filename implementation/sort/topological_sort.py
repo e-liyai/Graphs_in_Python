@@ -25,3 +25,5 @@ def sort(graph):
 
     if len(sortedList) != graph.numVertices:
         raise ValueError('This graph has a cycle')
+
+    print(sortedList)
