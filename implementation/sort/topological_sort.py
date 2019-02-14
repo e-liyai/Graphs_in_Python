@@ -20,8 +20,8 @@ def sort(graph):
         for v in graph.get_adjacent_vertices(vertex):
             indegreeMap[v] = indegreeMap[v] - 1
 
-            if indegreeMap[i] == 0:
-                queue.put(i)
+            if indegreeMap[v] == 0:
+                queue.put(v)
 
     if len(sortedList) != graph.numVertices:
         raise ValueError('This graph has a cycle')
