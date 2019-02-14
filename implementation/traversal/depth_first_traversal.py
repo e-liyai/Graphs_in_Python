@@ -2,6 +2,10 @@ from queue import Queue
 import numpy as np
 
 
+def init_visited(graph):
+    return np.zeros(graph.numVertices)
+
+
 def depth_first_search(graph, visited, current=0):
 
     if visited[current] == 1:

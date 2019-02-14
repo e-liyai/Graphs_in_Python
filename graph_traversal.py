@@ -1,4 +1,4 @@
-from implementation.traversal import breath_first_search
+from implementation.traversal import *
 from implementation.adjacency_matrix_graph import AdjacencyMatrixGraph
 
 graph = AdjacencyMatrixGraph(9)
@@ -13,4 +13,5 @@ graph.add_edge(6, 3)
 graph.add_edge(3, 4)
 graph.add_edge(6, 8)
 
-breath_first_search(graph, 2)
+# breath_first_search(graph, 2)
+depth_first_search(graph, init_visited(graph))

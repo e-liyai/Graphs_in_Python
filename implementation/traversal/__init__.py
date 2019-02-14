@@ -1,1 +1,2 @@
 from implementation.traversal.breath_first_traversal import breath_first_search
+from implementation.traversal.depth_first_traversal import *
