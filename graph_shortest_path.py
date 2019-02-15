@@ -1,7 +1,7 @@
 from implementation.adjacency_set_graph import AdjacencySetGraph
 from implementation.shortest_path import shortest_path
 
-graph = AdjacencySetGraph(8)
+graph = AdjacencySetGraph(8, directed=True)
 
 graph.add_edge(0, 1)
 graph.add_edge(1, 2)
