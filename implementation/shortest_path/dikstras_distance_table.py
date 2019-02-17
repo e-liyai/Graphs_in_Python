@@ -17,11 +17,11 @@ def build_dikstras_distance_table(graph, source):
     while len(priority_queue.keys()) > 0:
 
         current_vertex = priority_queue.pop_smallest()
-        current_distance = priority_queue[current_vertex][0]
+        current_distance = distance_table[current_vertex][0]
 
         for neighbour in graph.get_adjacent_vertices(current_vertex):
             distance = current_distance + \
-                graph.get_edga_weight(current_vertex, neighbour)
+                graph.get_edge_weight(current_vertex, neighbour)
 
             neighbour_distance = distance_table[neighbour][0]
 

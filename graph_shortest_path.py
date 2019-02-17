@@ -1,4 +1,5 @@
 from implementation.adjacency_set_graph import AdjacencySetGraph
+from implementation.adjacency_matrix_graph import AdjacencyMatrixGraph
 from implementation.shortest_path import shortest_path, dikstras_shortest_path
 
 graph = AdjacencySetGraph(8, directed=True)
@@ -18,7 +19,7 @@ shortest_path(graph, 0, 5)
 shortest_path(graph, 0, 6)
 shortest_path(graph, 7, 4)
 
-graph_two = AdjacencySetGraph(8, directed=False)
+graph_two = AdjacencyMatrixGraph(8, directed=True)
 
 graph_two.add_edge(0, 1, 1)
 graph_two.add_edge(1, 2, 2)
