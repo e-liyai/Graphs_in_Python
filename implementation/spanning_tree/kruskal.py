@@ -44,3 +44,21 @@ def kruskal_spanning_tree(graph):
         print('minimum spanning tree: ')
         for key, value in spanning_tree.items():
             print(key, ' ---> ', value)
+
+
+def has_cycle(spanning_tree):
+
+    for source in spanning_tree:
+        q = []
+        visited_vertices = set()
+
+        q.append(source)
+        while len(q) > 0:
+            vertex = q.pop(0)
+
+            if vertex in visited_vertices:
+                return True
+            visited_vertices.add(vertex)
+            q.extend(spanning_tree[vertex])
+
+    return False
