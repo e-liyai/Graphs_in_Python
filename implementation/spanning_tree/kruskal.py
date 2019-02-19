@@ -20,3 +20,27 @@ def kruskal_spanning_tree(graph):
     while len(priority_queue.keys()) > 0 and num_edges < graph.numVertices - 1:
 
         v1, v2 = priority_queue.pop_smallest()
+
+        if v1 in spanning_tree[v2]:
+            continue
+
+        vertex_pair = sorted([v1, v2])
+        spanning_tree[vertex_pair[0]].add(vertex_pair[1])
+
+        if has_cycle(spanning_tree):
+            spanning_tree[vertex_pair[0]].remove(vertex_pair[1])
+            continue
+
+        num_edges += 1
+
+        visited.add(v1)
+        visited.add(v2)
+
+    print('Visited vertices: ', visited)
+
+    if len(visited) != graph.numVertices:
+        print('minimum spanning tree not found')
+    else:
+        print('minimum spanning tree: ')
+        for key, value in spanning_tree.items():
+            print(key, ' ---> ', value)
